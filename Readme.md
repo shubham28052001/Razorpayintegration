@@ -2,7 +2,7 @@
 # 💳 Razorpay Donation App
 
 A simple and customizable donation/payment application built with **React.js**, **Node.js**, **MongoDB**, and **Razorpay API** integration.
-
+💳 Razorpay Payment Integration App – Live Demo: [View Live](https://razorpayintegration-git-main-shubham-sanodiyas-projects.vercel.app)
 ## 📦 Tech Stack
 
 - **Frontend**: React.js + Tailwind CSS
@@ -10,6 +10,22 @@ A simple and customizable donation/payment application built with **React.js**, 
 - **Database**: MongoDB Atlas
 - **Payment Gateway**: Razorpay (Test Mode)
 - **Deployment**: [ Vercel / Render]
+
+
+## 🛠️ API Structure
+### 📍 POST `/api/payments/create-order`
+
+**Purpose:** Create a Razorpay order with user details + tip
+#### Request Body:
+{
+  "name": "John Doe",
+  "email": "john@example.com",
+  "phone": "9876543210",
+  "amount": 2500,
+  "tip": 18,
+  "anonymous": false,
+  "address": "New Delhi"
+}
 
 ## ✨ Features
 - Choose preset donation amounts or enter a custom one
@@ -97,6 +113,7 @@ OTP	123456
 
 | ![Home](./Screenshots/home.png) | ![Payment](./Screenshots/payment.png) |
 
+💳 Razorpay Payment Integration App – Live Demo: [View Live](https://razorpayintegration-git-main-shubham-sanodiyas-projects.vercel.app)
 
 🙋‍♂️ Author or Contact
 ## 🙋‍♂️ Author
