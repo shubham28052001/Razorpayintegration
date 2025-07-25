@@ -1,5 +1,5 @@
 const Razorpay = require('razorpay');
-const PaymentModel=require("../models/Payment.models")
+
 const razorpayInstance = new Razorpay({
   key_id: process.env.RAZORPAY_KEY_ID,
   key_secret: process.env.RAZORPAY_KEY_SECRET,
@@ -12,7 +12,7 @@ module.exports.createOrder = async (data) => {
   const totalAmount = Math.round(amount + tipAmount);
 
   const options = {
-    amount: totalAmount * 100,
+    amount: totalAmount * 100, 
     currency: 'INR',
     receipt: `receipt_${Date.now()}`,
     notes: {
@@ -23,20 +23,10 @@ module.exports.createOrder = async (data) => {
       tipPercentage: tip,
     },
   };
-  console.log("🔧 Razorpay Order Options:", options);
-  const order = await razorpayInstance.orders.create(options);
 
-   await PaymentModel.create({
-    name: anonymous ? 'Anonymous' : name,
-    email:anonymous ? 'Anonymous' : email,
-    phone,
-    address,
-    anonymous,
-    amount,
-    tipPercentage: tip,
-    totalAmount,
-    orderId: order.id,
-  });
+  console.log("🔧 Razorpay Order Options:", options);
+
+  const order = await razorpayInstance.orders.create(options);
 
   return {
     success: true,
